@@ -47,9 +47,9 @@ class Bootcamp {
             return false;
         } else {
             console.log(`The students registered in ${this.name} are:`);
-            for (const student of this.students) {
-                console.log(`Name: ${student.name}, Email: ${student.email}`);
-            }
+            this.students.forEach(student => {
+                console.log(`${student.name} - ${student.email}`);
+            });
             return true;
         }
     }
@@ -62,10 +62,6 @@ if (reactBootcamp.name === 'React' && reactBootcamp.level === 'Advanced'
     && Array.isArray(reactBootcamp.students) && reactBootcamp.students.length === 0) {
     console.log('TASK 2: PASS');
 }
-
-
-// Test function definition
-
 
 const runTest = (bootcamp, student) => {
     const attemptOne = bootcamp.registerStudent(student);
@@ -84,3 +80,5 @@ const runTest = (bootcamp, student) => {
         console.log("TASK 4: PASS 2/2");
     }
 };
+
+runTest(reactBootcamp, testStudent);
